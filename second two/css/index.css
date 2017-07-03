@@ -305,7 +305,56 @@ div.contBg{
 	background: url(../img/style_z_c8c88dc.png) no-repeat;
 	background-position: -1206px -1058px;
 }
+
 .game_downloader:hover{
 	background: url(../img/style_z_c8c88dc.png) no-repeat;
 	background-position: -916px -1058px;
+}
+.game_pocket{
+	width:170px;
+	height: 130px;
+	background: url(../img/aside_koudai1_bf61764.jpg) no-repeat;
+	background-position: 0px 0px;
+}
+.game_pay{
+	width:170px;
+	height: 240px;
+	background: url(../img/aside_box1_a83c7c5.jpg) no-repeat;
+	background-position: 0px 0px;
+}
+.game_pocket:hover{
+	background-position: 0px -130px;
+}
+.safe_menu{
+	padding: 0;
+	list-style: none;
+}
+.safe_menu >li{
+	float: left;
+	width: 50%;
+	height: 80px;
+	box-sizing: border-box;
+	padding:0 8px;
+	text-align: center;
+	cursor: pointer;
+}
+.safe_menu >li:hover .safe_icon{
+	transform: translateY(-10px);
+}
+.safe_menu >li:hover .safe_text{
+	transform: translateY(-10px);
+}
+.safe_icon{
+	display: block;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 30px;
+	color: #fff;
+	font-weight: 100;
+	transition: height 1s;
+}
+.safe_text{
+ color: #fff;
+ transition: height 1s;
 }
