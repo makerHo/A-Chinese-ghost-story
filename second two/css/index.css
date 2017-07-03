@@ -206,7 +206,6 @@ ul.linear,ul.navs{
 	box-sizing: border-box;
 	float: left;
 	transition: .5s;
-	/*border: 1px solid red;*/
 }
 .linear >li{
 	height: 30px;
@@ -233,12 +232,9 @@ div.wrapBg{
 	min-width: 1600px;
 	height: 2300px;
 	/*margin-top:-57px ;*/
-	background: url("../img/block1Bg_7195bf4.jpg")0 55px no-repeat,
-				url("../img/bg2_7ace25a.jpg") 0px 719px no-repeat,
-				url("../img/bg3_7cf006f.jpg") 0px 1215px no-repeat;
-				
-	/*background-position:0 55px ;*/
-	background-size:100%;
+	background: url("../img/block1Bg_7195bf4.jpg")0 55px no-repeat / 100% 35%,
+				url("../img/bg2_7ace25a.jpg") 0px 860px no-repeat /100% 45%,
+				url("../img/bg3_7cf006f.jpg") 0px 1500px no-repeat /100% 45%;
 	position: relative;
 }	
 div.contBg{
@@ -277,13 +273,13 @@ div.contBg{
 
 .section_box{
 	width: 1250px;
-	height: 1000px;
+	height: 1300px;
 	margin: 600px auto 0;
-	background: red;
+	/*background: red;*/
 }
 .section_l,.section_c,.section_r{
 	float: left;
-	height: 1000px;
+	height: 1300px;
 	/*border: 1px solid red;*/
 	padding: 5px;
 }
@@ -325,11 +321,12 @@ div.contBg{
 .game_pocket:hover{
 	background-position: 0px -130px;
 }
-.safe_menu{
+.safe_menu,.safe_menus{
 	padding: 0;
+	margin: 0;
 	list-style: none;
 }
-.safe_menu >li{
+.safe_menu >li,.safe_menus >li{
 	float: left;
 	width: 50%;
 	height: 80px;
@@ -344,17 +341,175 @@ div.contBg{
 .safe_menu >li:hover .safe_text{
 	transform: translateY(-10px);
 }
+.safe_menus >li:hover .safe_icon{
+	transform: translateY(-10px);
+}
+.safe_menus >li:hover .safe_text{
+	transform: translateY(-10px);
+}
 .safe_icon{
 	display: block;
 	width: 100%;
 	height: 50px;
 	line-height: 50px;
-	font-size: 30px;
+	font-size: 25px;
 	color: #fff;
 	font-weight: 100;
-	transition: height 1s;
+	transition: all .3s linear 0s;
 }
 .safe_text{
- color: #fff;
- transition: height 1s;
+	line-height: 10px;
+	display: block;
+ 	color: #fff;
+ 	transition: all .3s linear .1s;
+}
+.game_info{
+	width: 170px;
+	height: 383px;
+	background: url(../img/aside_box2_7174bc5.jpg);
+	background-size: 100% 75%;
+}
+.gameInfo{
+	list-style: none;
+	padding: 0;
+	color: #fff;
+	font-size: 16px;
+	margin-top: 10px;
+	text-align: center;
+	font-family: "微软雅黑";
+}
+.gameInfo>li{
+	height: 60px;
+	line-height: 60px;
+}
+.gameInfo>li a{
+	color:#fff;
+	text-decoration: none;
+}
+.game-scale{
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+}
+.gameInfo>li:hover i.game-scale{
+	transform: rotateY(360deg);
+	transition: all 1s;
+}
+.gameInfo>li i.game-scale{
+	transition: all 1s;
+}
+.resource{
+	width: 170px;
+	height: 160px;
+}
+.safe_menus{
+	margin-top: 30px;
+}
+.customer{
+	margin-top: 10px;
+	width: 170px;
+	height: 380px;
+}
+.cust_sevices{
+	width: 170px;
+	height: 190px;
+	border: 1px solid #becbdd;
+	background: url(../img/style_z_c8c88dc.png);
+	background-position: -100px -660px;
+	/*background-size: ;*/
+}
+.cust_info{
+	width: 170px;
+	height: 170px;
+}
+.acount_safe{
+	margin-top: 50px;
+	padding-left:25px;
+}
+.acount_safe:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.acount_safe li{
+	float: left;
+	width: 40%;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 0;
+	text-indent:-3px;
+	margin:5px 15px 0 0;
+	color: #fff;
+}
+.acount_safe li:nth-child(2n){
+	margin-right: 0;
+}
+.acount_safe li a{
+	color: #fff;
+	font-size: 12px;
+}
+.sevice_phone{
+	margin-top: 10px;
+	width: 100%;
+	height: 60px;
+}
+.tel_icon{
+	color: #0f3063;
+	font-size: 35px;
+	margin-left: 10px;
+	/*line-height: 10px;*/
+	
+}
+.tel{
+	margin-left: 15px;
+	display: inline-block;
+	color: #0f3063;
+}
+.plan_player{
+	width: 100%;
+	height: 170px;
+	list-style: none;
+	padding: 0;
+}
+.plan_player li{
+	float: left;
+	width: 50%;
+	height: 84px;
+	margin: 0;
+}
+.qvknow,.qvknow1,.qvknow2,.qvknow3{
+	display: inline-block;
+	width: 100%;
+	height: 87px;
+	/*border: 1px solid #fff;*/
+	background:url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: -970px -660px;
+}
+.qvknow:hover{
+	background-position: -1140px -660px;
+}
+.qvknow1{
+
+	background-position: -1055px -660px;
+}
+.qvknow1:hover{
+
+	background-position: -1225px -660px;
+}
+.qvknow2{
+
+	background-position: -970px -742px;
+}
+.qvknow2:hover{
+
+	background-position: -1140px -742px;
+}
+.qvknow3{
+
+	background-position: -1055px -742px;
+}
+
+.qvknow3:hover{
+
+	background-position: -1225px -742px;
 }
