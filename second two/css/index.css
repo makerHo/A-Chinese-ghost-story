@@ -288,11 +288,11 @@ div.contBg{
 	/*background: #008000;*/
 }
 .section_c{
-	width: 55.5%;
+	width: 57%;
 	background: deepskyblue;
 }
 .section_r{
-	width: 30%;
+	width: 28.5%;
 	background:gray;
 }
 .game_downloader{
@@ -512,4 +512,115 @@ div.contBg{
 .qvknow3:hover{
 
 	background-position: -1225px -742px;
+}
+/*-------------banner section center-------------*/
+.sec_banner{
+	width: 700px;
+	height: 300px;
+	margin: 0 auto;
+}
+.sec_banner_gov{
+	position: relative;
+	overflow: hidden;
+}
+.sec_ban_gov_top{
+	width: 100%;
+	height:300px;
+	overflow: hidden;
+	/*border: 1px solid red;*/
+
+}
+.ban_gov{
+	padding: 0;
+	margin: 0;	
+	width: 3500px;
+	height: 300px;
+	list-style: none;
+	position: absolute;
+}
+.ban_gov li{
+	padding: 0;
+	margin: 0;	
+	float: left;
+}
+.ban_gov li a{
+	display: inline-block;
+	height: 300px;	
+}
+.ban_gov>li a img{
+	width: 100%;	
+}
+.sec_ban_title{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 700px;
+	height: 36px;
+}
+.sec_ban_title li{
+	width: 140px;
+	height: 36px;
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: -519px -872px;
+	text-align: center;
+	line-height: 36px;
+	float: left;
+}
+.sec_ban_title li:hover{
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: 0px -1246px;
+	color: #fff;
+	
+}
+li.sec_ban_title_change{
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: 0px -1246px;
+	color: #fff;
+	
+}
+.sec_ban_title li a{
+	width: 100%;
+	height: 100%;
+	color: #617392;
+}
+.sec_ban_title li:hover a{
+	text-decoration: none;
+	color: #fff;
+}
+.sec_ban_title li a.sec_ban_title_a{
+	text-decoration: none;
+	color: #fff;
+}
+.sec_ban_gov_btm{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index:10;
+}
+.sec_banner_collaborate{
+	display: none;
+}
+/*点击切换tab页*/
+.sec_tab_btn{
+	width:100px;
+	height: 30px;
+	color: #fff;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 100;
+}
+.sevGov,.secColl{
+	width: 50px;
+	height: 30px;
+	background: #fff;
+	color: #ae844f;
+	float: left;
+	text-align: center;
+	line-height:30px;
+	cursor: pointer;
+}
+.sev_change{
+	background:#ae844f;
+	color: #fff;
 }
