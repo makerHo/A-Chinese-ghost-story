@@ -46,13 +46,7 @@ $(function(){
 //
 
 
-// loop test2 bootstarp 控制间隔
-//设置切换时间间隔
-	$('.carousel').carousel({
-	  interval: 2000
-	})
-// loop test3
-
+// loop test2
 //var secLoopTimer;
 //var eleWidth=$(".ban_gov li a img").width();
 //

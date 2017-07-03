@@ -289,7 +289,6 @@ div.contBg{
 }
 .section_c{
 	width: 57%;
-	position: relative;
 	background: deepskyblue;
 }
 .section_r{
@@ -520,83 +519,108 @@ div.contBg{
 	height: 300px;
 	margin: 0 auto;
 }
-.sec_ban_box{
-	padding: 0;
+.sec_banner_gov{
 	position: relative;
+	overflow: hidden;
 }
-.carousel-indicators_change,.carousel-indicators_change2{
+.sec_ban_gov_top{
 	width: 100%;
-	height: 36px;
+	height:300px;
+	overflow: hidden;
+	/*border: 1px solid red;*/
+
+}
+.ban_gov{
+	padding: 0;
+	margin: 0;	
+	width: 3500px;
+	height: 300px;
+	list-style: none;
+	position: absolute;
+}
+.ban_gov li{
+	padding: 0;
+	margin: 0;	
+	float: left;
+}
+.ban_gov li a{
+	display: inline-block;
+	height: 300px;	
+}
+.ban_gov>li a img{
+	width: 100%;	
+}
+.sec_ban_title{
 	margin: 0;
 	padding: 0;
+	list-style: none;
+	width: 700px;
+	height: 36px;
+}
+.sec_ban_title li{
+	width: 140px;
+	height: 36px;
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: -519px -872px;
+	text-align: center;
+	line-height: 36px;
+	float: left;
+}
+.sec_ban_title li:hover{
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: 0px -1246px;
+	color: #fff;
+	
+}
+li.sec_ban_title_change{
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: 0px -1246px;
+	color: #fff;
+	
+}
+.sec_ban_title li a{
+	width: 100%;
+	height: 100%;
+	color: #617392;
+}
+.sec_ban_title li:hover a{
+	text-decoration: none;
+	color: #fff;
+}
+.sec_ban_title li a.sec_ban_title_a{
+	text-decoration: none;
+	color: #fff;
+}
+.sec_ban_gov_btm{
 	position: absolute;
-	left: 0px;
+	left: 0;
 	bottom: 0;
+	z-index:10;
 }
-.carousel-indicators_change li{
-	width: 140px;
-	height: 36px;
-	margin: 0;
-	border: 0;
-	opacity: 1;
-	background: url(../img/style_z_c8c88dc.png) no-repeat;
-	background-position: -519px -872px;
-	text-align: center;
-	border-radius: 0;
-	line-height: 36px;
-	float: left;
-	position: relative;
-	text-align: center;
-	line-height: 36px;
-	color: #617392;
+.sec_banner_collaborate{
+	display: none;
 }
-.carousel-indicators_change li.active{
-	width: 139px;
-	height: 36px;
-	background: url(../img/style_z_c8c88dc.png) no-repeat;
-	background-position: 0px -1246px;
+/*点击切换tab页*/
+.sec_tab_btn{
+	width:100px;
+	height: 30px;
 	color: #fff;
-	
-}
-.carousel-indicators_change li p{
-	width: 140px;
-	height: 36px;
 	position: absolute;
+	right: 0;
 	top: 0;
-	left: 500px;
-	
+	z-index: 100;
 }
-/*控制切换是否为官方,合作*/
-.slide{}
-/*----------------------------coll------------------*/
-.carousel-indicators_change2 li{
-	width: 233px;
-	height: 36px;
-	margin: 0;
-	border: 0;
-	opacity: 1;
-	background: url(../img/style_z_c8c88dc.png) no-repeat;
-	background-position: -519px -872px;
-	text-align: center;
-	border-radius: 0;
-	line-height: 36px;
+.sevGov,.secColl{
+	width: 50px;
+	height: 30px;
+	background: #fff;
+	color: #ae844f;
 	float: left;
-	position: relative;
 	text-align: center;
-	line-height: 36px;
-	color: #617392;
+	line-height:30px;
+	cursor: pointer;
 }
-.carousel-indicators_change2 li.active{
-	width: 233px;
-	height: 36px;
-	background: url(../img/style_z_c8c88dc.png) no-repeat;
-	background-position: 0px -1246px;
+.sev_change{
+	background:#ae844f;
 	color: #fff;
-}
-.carousel-indicators_change2 li p{
-	width: 233px;
-	height: 36px;
-	position: absolute;
-	top: 0;
-	left: 500px;
 }
