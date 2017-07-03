@@ -1,0 +1,73 @@
+@charset "utf-8";
+.border{
+	border: 1px solid red;
+	
+}
+.loginfont{
+	color: #fff;
+	font-size: 30px;
+	text-align: center;
+	margin-left:5px;
+}
+.borderRed{
+	/*border:1px solid red;*/
+	height: 60px;
+	line-height: 60px;
+	padding: 0;
+	font-size: 16px;
+	text-align: center;
+	font-weight: 600;
+	cursor: pointer;
+}
+.marginLeft{
+	margin-left:15px;
+}
+.pointsize{
+	font-size:30px;
+	line-height: 50px;
+}
+.regBtn{
+	width: 30px;
+	height: 20px;
+	font-size: 10px;
+}
+.regline{
+	line-height: 60px;
+}
+.regline-Btn{
+	line-height: 50px;
+}
+.userborder{
+	border-right:1px solid #ccc;
+	height:30px;
+	line-height: 20px;
+	margin-top:15px ;
+}
+.wrap{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url(../img/0.jpg) no-repeat;
+}
+.loginbox{
+	width:400px;
+	height:300px;
+	background: rgba(0,0,0,.7);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -150px;
+	margin-left:-200px ;
+}
+.regdiv{
+	width:40%;
+	height: 40px;
+}
+.container-fluid{
+	background: rgba(0,0,0,.7);
+	color: #fff;
+}
