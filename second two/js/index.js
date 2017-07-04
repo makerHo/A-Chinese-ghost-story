@@ -49,7 +49,7 @@ $(function(){
 // loop test2 bootstarp 控制间隔
 //设置切换时间间隔
 	$('.carousel').carousel({
-	  interval: 2000
+	  interval: 4000
 	})
 // loop test3
 
@@ -68,19 +68,20 @@ $(function(){
 //},3000);
 
 //click change gov
-$(".sevGov").click(function(){
-	$(".sec_ban_gov_top").css({"display":"block"});
-	$(".sec_banner_collaborate").css({"display":"none"});
-	$(".sevGov").addClass("sev_change")
-	$(".secColl").removeClass("sev_change");
+$('.sevGov').click(function(){
+	$(this).removeClass("slideswich").addClass("slideswich");
+	$(".secColl").removeClass("slideswich");
+	$(".slideone").removeClass("slide_off")
+	$(".slidetwo").removeClass("slide_off").addClass("slide_off")
 });
-$(".secColl").click(function(){
-	$(".sec_ban_gov_top").css({"display":"none"});
-	$(".sec_banner_collaborate").css({"display":"block"});
-	$(".secColl").addClass("sev_change")
-	$(".sevGov").removeClass("sev_change");
+$('.secColl').click(function(){
+	$(this).removeClass("slideswich").addClass("slideswich");
+	$(".sevGov").removeClass("slideswich");
+	$(".slidetwo").removeClass("slide_off")
+	$(".slideone").removeClass("slide_off").addClass("slide_off")
 });
-    
+//--------------------------------------------
+
     
     
     
