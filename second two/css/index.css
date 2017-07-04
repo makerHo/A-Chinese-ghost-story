@@ -290,10 +290,11 @@ div.contBg{
 .section_c{
 	width: 57%;
 	position: relative;
-	background: deepskyblue;
+	/*background: deepskyblue;*/
 }
 .section_r{
 	width: 28.5%;
+	width: 350px;
 	background:gray;
 }
 .game_downloader{
@@ -740,6 +741,113 @@ div.contBg{
 .play_interflow,.play_role{
 	width: 700px;
 	height: 300px;
-	border: 1px solid red;
-	margin-top: 10px;
+	margin: 10px 0 0 0;
+	overflow: hidden;
+}
+.play_role{
+	background: #fcfbf8;
+}
+.role_tabs{
+	margin:0;
+	padding: 0;
+	border: 1px solid #d5d2d2;
+	position: relative;
+}
+ul.role_list{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 300;
+	border: 1px solid #d5d2d2;
+}
+.nav-tabs.nav-justified > li > a{
+	border: none;
+	font-size: 16px;
+	color: #000;
+}
+.nav.nav-tabs.nav-justified > li.active a,
+.nav.nav-tabs.nav-justified > li:hover a{
+	border: none;
+	color: #c72525;
+	background: rgba(0,0,0,0);
+	border-bottom:4px solid red ;
+}
+/*--------------------*/
+
+/*--------------------*/
+.tab-content{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 300px;
+}
+.tab-content>div{
+	width: 100%;
+	height: 300px;
+}
+#mez{
+	background: url(../img/play_role/mz-m_e502c6c.png) no-repeat;
+}
+/*-------玩家交流-------*/
+.play_interflow{
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: 0 -350px;
+}
+.play_if_top{
+	height: 50px;
+	width: 100%;
+}
+.play_if_btm{
+	height: 250px;
+	width: 100%;
+}
+.bbs_share,.hall_of_name,.walkthrough{
+	width: 500px;
+	height: 250px;
+	overflow: hidden;
+	float: left;
+}
+.bbs_img,.hall_img,.walkthrough_img{
+	height: 250px;
+	width: 100px;
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: -1260px -300px;
+	float: left;
+	cursor: pointer;
+}
+
+
+/*----bbs share-------*/
+.bbs_img:hover{
+	background-position: -1160px -300px;
+}
+/*----bbs 名人堂-------*/
+.hall_img{
+	background-position: -1060px -300px;
+}
+.hall_img:hover{
+	background-position: -960px -300px;
+}
+/*----bbs 游戏攻略----*/
+.walkthrough_img{
+	background-position: -0px -660px;
+}
+.walkthrough_img:hover{
+	background-position: -860px -300px;
+}
+/*----初始状态 隐藏名人堂和游戏攻略-------*/
+.bbs_hidden{
+	display: none;
+}
+.bbs_contont,.hall_contont,.walkthrough_contont{
+	width: 400px;
+	height: 250px;
+	float: right;
+	background: #fff;
+}
+.sec_server_search{
+	width: 360px;
+	height: 70px;
+	background: #fff;
 }

@@ -82,8 +82,43 @@ $('.secColl').click(function(){
 });
 //--------------------------------------------
 
-    
-    
+/**
+ * 玩家交流区 点击调整宽度效果
+ * */
+var bbsWidth = $('.bbs_share').width();
+var bbsImg = $(".bbs_img").width();
+		$('.bbs_share').css({"width":bbsWidth+"px"});
+		$(".bbs_img").css({"background-position":"-1160px -300px"});
+		$(".hall_of_name").css({"width":bbsImg+"px"});
+		$(".walkthrough").css({"width":bbsImg+"px"});	
+$(".bbs_img").click(function(){	
+	$('.bbs_share').animate({"width":bbsWidth+"px"},500);
+	$(this).css({"background-position":"-1160px -300px"});
+//	$(".bbs_img").css({"background-position":"-1260px -300px"});
+	$(".hall_img").css({"background-position":"-1060px -300px"});
+	$(".walkthrough_img").css({"background-position":"-0px -660px"})
+	$('.hall_of_name').animate({"width":bbsImg+"px"},500);
+	$('.walkthrough').animate({"width":bbsImg+"px"},500);
+});
+$(".hall_img").click(function(){	
+	$('.bbs_share').animate({"width":bbsImg+"px",},500);
+	$('.hall_of_name').animate({"width":bbsWidth+"px"},500);
+	$(this).css({"background-position":"-960px -300px"});
+	$(".bbs_img").css({"background-position":"-1260px -300px"});
+//	$(".hall_img").css({"background-position":"-1060px -300px"});
+	$(".walkthrough_img").css({"background-position":"-0px -660px"})
+	$('.walkthrough').animate({"width":bbsImg+"px"},500);
+});
+$(".walkthrough_img").click(function(){	
+	$('.bbs_share').animate({"width":bbsImg+"px"},500);
+	$('.hall_of_name').animate({"width":bbsImg+"px"},500);
+	$('.walkthrough').animate({"width":bbsWidth+"px"},500);
+	$(this).css({"background-position":"-860px -300px"});
+	$(".bbs_img").css({"background-position":"-1260px -300px"});
+	$(".hall_img").css({"background-position":"-1060px -300px"});
+//	$(".walkthrough_img").css({"background-position":"-0px -660px"})
+});
+
     
     
     
