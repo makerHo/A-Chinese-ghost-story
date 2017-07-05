@@ -123,7 +123,7 @@ $(".walkthrough_img").click(function(){
  * news tab页 
  */
 var newsContentWidth = $(".news_content div").width()+30;
-console.log(newsContentWidth)
+//console.log(newsContentWidth)
 $(".news_title li").hover(function(){
 	var lisIndex = $(this).index();
 	$(".news_content").animate({"left":"-"+newsContentWidth*lisIndex+"px"},300);
