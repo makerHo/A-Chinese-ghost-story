@@ -813,7 +813,7 @@ div.contBg{
 	width: 700px;
 	height: 350px;
 	margin: 10px 0 0 0;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 .play_role{
 	background: #fcfbf8;
@@ -877,7 +877,7 @@ ul.role_list{
 .tab-content>div{
 	width: 100%;
 	height: 350px;
-	padding: 60px 20px 10px;
+	/*padding: 60px 20px 10px;*/
 }
 .role_factions{
 	width: 240px;
@@ -914,7 +914,7 @@ ul.role_list{
 	width: 155px;
 	height:140px;
 	background: url(../img/style_z_c8c88dc.png);
-	background-position: -1216px -920px;
+	background-position: -1216px -918px;
 }
 .fade{
 	position: relative;
@@ -926,30 +926,68 @@ ul.role_list{
 	right: 20px;
 	bottom: 20px;
 }
-.role-sex a.male{
+ a.male_role,a.madam-role{
 	width: 100%;
 	height: 40px;
 	display: block;
-	background: url(../img/style_z_c8c88dc.png) no-repeat;
-	background-position: -230px -872px;
 	color: #000;
 	font-size: 16px;
 	text-indent:1em;
 	line-height: 40px;
 	text-decoration: none;
 }
-.role-sex a.madam{
+
+ a.madam-roles, a.male_roles{
 	margin: 10px 0 0 75px;
 	width: 40px;
 	height: 40px;
 	border-radius: 40px;
 	display: block;
-	background: url(../img/style_z_c8c88dc.png) no-repeat;
-	background-position:-810px -600px;
 }
+ a.male_role{
+ 	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: -230px -872px;
+ }
+ a.male_roles{
+ 	margin-top: 0;
+ 	
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position:-360px -310px ;
+}
+ a.madam-role{
+ 	margin-top: 10px;
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: -1227px -560px;
+	
+}
+ a.madam-roles{
+ 	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position:-810px -600px;
+ }
 
-.mez{
-	background: url(../img/play_role/mz-m_e502c6c.png) no-repeat ;
+.male_sex_tab{
+	width: 100%;
+	height: 100%;
+	background: url(../img/play_role/mz-m_e502c6c.png) no-repeat;
+	border: 1px solid red;
+	width: 100%;
+	height: 350px;
+	padding: 60px 20px 10px;
+	position:relative;
+	display: none;
+}
+.madam_sex_tab{
+	/*margin-top: 300px;*/
+	border: 1px solid red;
+	background: url(../img/play_role/mz-f_f6132ea.png) no-repeat;
+	width: 100%;
+	height: 350px;
+	padding: 60px 20px 10px;
+	position:relative;
+	display: none;
+}
+.role_show{
+	display: block;
 }
 /*-------玩家交流-------*/
 .play_interflow{
@@ -965,7 +1003,7 @@ ul.role_list{
 	width: 100%;
 }
 .bbs_share,.hall_of_name,.walkthrough{
-	width: 500px;tab-content
+	width: 500px;
 	height: 250px;
 	overflow: hidden;
 	float: left;

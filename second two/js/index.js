@@ -144,8 +144,17 @@ $(".video_tabs ul li").click(function(){
 		$(".fly_t").html("落霞峰美景");
 	}
 });
-    
-    
+
+
+//role_change sex    
+$(".madam-roles").hover(function(){
+	$(".male_sex_tab").removeClass("role_show");
+	$(".madam_sex_tab").addClass("role_show");
+});
+$(".male_roles").mouseenter(function(){
+	$(".male_sex_tab").addClass("role_show");
+	$(".madam_sex_tab").removeClass("role_show");
+});
     
     
     
