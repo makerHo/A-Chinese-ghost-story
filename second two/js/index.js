@@ -3,6 +3,7 @@ $(function(){
 	var timers=setInterval(function(){
 		$(".header_gg_slides").animate({"top":"-"+clitHeight+"px"},500,function(){
 			$(this).css({"top":"0"});
+//			$(".header_gg_slides li").removeClass("headerGGSlides").addClass("headerGGSlides")
 			$(".header_gg_slides li:first").appendTo($(this));
 		})
 //		console.log(clitHeight)
@@ -118,9 +119,31 @@ $(".walkthrough_img").click(function(){
 	$(".hall_img").css({"background-position":"-1060px -300px"});
 //	$(".walkthrough_img").css({"background-position":"-0px -660px"})
 });
-
-    
-    
+/**
+ * news tab页 
+ */
+var newsContentWidth = $(".news_content div").width()+30;
+console.log(newsContentWidth)
+$(".news_title li").hover(function(){
+	var lisIndex = $(this).index();
+	$(".news_content").animate({"left":"-"+newsContentWidth*lisIndex+"px"},300);
+});
+/**
+ *video tabs change 
+ */
+$(".video_tabs ul li").click(function(){
+	$(".video_tabs ul li").removeClass("active_video");
+	$(this).addClass("active_video");
+	var videoIndex=$(this).index();
+	$(".video_contant div").removeClass('video_show').eq(videoIndex).addClass("video_show");
+	if(videoIndex==0){
+		$(".fly_t").html("一笑倾城CG");
+	}else if(videoIndex==1){
+		$(".fly_t").html("全新婚礼一条龙");
+	}else if(videoIndex==2){
+		$(".fly_t").html("落霞峰美景");
+	}
+});
     
     
     
