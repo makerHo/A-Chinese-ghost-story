@@ -159,10 +159,6 @@ $(".male_roles").mouseenter(function(){
     var picNum = 1;//上一次移入的图片的ID
 /**
  *mouseenter 效果 */
-//	$(".role_tabs li").mouseenter(function(){
-//		console.log($(this).index())
-//	})
-	
 	$(".role_tabs li").mouseenter(function(){
 		var picIndex = $(this).index();
 		console.log(picIndex);

@@ -396,7 +396,7 @@ div.contBg{
 .safe_menu >li,.safe_menus >li{
 	float: left;
 	width: 50%;
-	height: 80px;
+	height: 90px;
 	box-sizing: border-box;
 	padding:0 8px;
 	text-align: center;
@@ -439,6 +439,7 @@ div.contBg{
 .gameInfo{
 	list-style: none;
 	padding: 0;
+	padding-top: 10px;
 	color: #fff;
 	font-size: 16px;
 	margin-top: 10px;
@@ -470,7 +471,7 @@ div.contBg{
 	height: 160px;
 }
 .safe_menus{
-	margin-top: 45px;
+	margin-top: 35px;
 }
 .customer{
 	margin-top: 10px;
@@ -501,7 +502,7 @@ div.contBg{
 .acount_safe li{
 	float: left;
 	width: 40%;
-	height: 20px;
+	height: 25px;
 	line-height: 20px;
 	padding-left: 0;
 	text-indent:-3px;
@@ -597,7 +598,7 @@ div.contBg{
 	padding: 0;
 	position: absolute;
 	left: 0px;
-	bottom: 0;
+	bottom: -2px;
 }
 .carousel-indicators_change li{
 	width: 140px;
@@ -984,18 +985,16 @@ ul.role_list{
 	display: none;
 }
 .madam_sex_tab{
-	/*margin-top: 300px;*/
-	border: 1px solid red;
 	background: url(../img/play_role/mz-f_f6132ea.png) no-repeat;
 	width: 100%;
 	height: 350px;
 	padding: 60px 20px 10px;
 	position:relative;
-	display: none;
+	/*display: none;*/
 }
-div.unperson,div.doctor,div.enchanter,div.gentry,div.wizard,div.artist,div.archer,div.trooper,div.swordsman,div.mez{
+/*div.unperson,div.doctor,div.enchanter,div.gentry,div.wizard,div.artist,div.archer,div.trooper,div.swordsman,div.mez{
 	display: none;
-}
+}*/
 .role_show{
 	display: block;
 }
@@ -1683,4 +1682,76 @@ li.active_video{
 }
 .announcement a{
 	color: #000;
+}
+/*------------aside------------*/
+.aside{
+	width: 160px;
+	height: 512px;
+	position: fixed;
+	top: 100px;
+	right: 0;
+	background: url(../img/slidebar_209454d.png) ;
+}
+.aside_control{
+	padding-top: 5px;
+	width: 30px;
+	height: 85px;
+	position: absolute;
+	top: 0;
+	left: -20px;
+	font-size: 20px;
+	text-align: center;
+	color: #fff;
+	background: #d0ae4c;
+}
+.aside_contain{
+	width: 150px;
+	height: 512px;
+	float: right;
+	padding-top: 10px;
+}
+.gov_attention,.gov_download,.gov_att{
+	width: 100%;
+	height: 220px;
+	border: 1px solid red;
+}
+.gov_koudai{
+	width: 150px;
+	height: 60px;
+	color: #9db7fc;
+	text-align: center;
+	line-height: 20px;
+}
+.gov_koudai p{
+	margin-bottom: 0px;
+}
+.gov_koudai p:first-child{
+	font-size: 16px;
+}
+.gov_pat{
+	
+}
+.pocket_qrcode{
+	width: 120px;
+	height: 120px;
+	margin: 5px auto;
+	background: url(../img/index_z_1f5dbe3.png) no-repeat;
+	background-position: 0px -275px;
+}
+.aside_title{
+	margin-top: 10px;
+	width: 150px;
+	height: 40px;
+	color: #9db7fc;
+	background: #253459;
+	font-size: 14px;
+}
+.aside_title a{
+	text-decoration: underline;
+	color: #9db7fc;
+	font-size: 16px;
+}
+.gov_att{
+	width: 150px;
+	height: 170px;
 }
