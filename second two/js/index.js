@@ -156,8 +156,30 @@ $(".male_roles").mouseenter(function(){
 	$(".madam_sex_tab").removeClass("role_show");
 });
     
-    
-    
+    var picNum = 1;//上一次移入的图片的ID
+/**
+ *mouseenter 效果 */
+//	$(".role_tabs li").mouseenter(function(){
+//		console.log($(this).index())
+//	})
+	
+	$(".role_tabs li").mouseenter(function(){
+		var picIndex = $(this).index();
+		console.log(picIndex);
+		if(picNum == picIndex){
+			return;
+		}
+		picNum = picIndex;//picNum =4
+		$(".role_factions").css({"margin-top":"-100px","opacity":"0"}).animate({"margin-top":"0","opacity":"1"},1000);
+		$(".profession").css({"margin-left":"-300px"}).delay(200).animate({"margin-left":"0px","opacity":"1"},1000);
+		$(".pro_chart").css({"opacity":"0","margin-top":"100px"}).delay(400).animate({"opacity":"1","margin-top":"10px"},1000);
+		$(".role_show").css({"background-position":"-800 0 ","opacity":"0"}).delay(200).animate({"background-position":"0 0","opacity":"1"},300);
+		
+	})
+/*
+ * -----------------------------------------------------------------------
+ */
+
     
    /*----------------------window load-----------------------------*/ 
 });
