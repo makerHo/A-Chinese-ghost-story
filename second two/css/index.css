@@ -382,7 +382,7 @@ div.contBg{
 .game_pay{
 	width:170px;
 	height: 250px;
-	background: url(../img/aside_box1_a83c7c5.jpg) no-repeat;
+	background: url(../img/aside_box1_a83c7c5.jpg);
 	background-position: 0px 0px;
 }
 .game_pocket:hover{
@@ -1388,6 +1388,7 @@ li.fly_r{
 .video_contant{
 	width: 350px;
 	height: 190px;
+	position: relative;
 	/*overflow: hidden;*/
 }
 .video_c_one,.video_c_two,.video_c_three{
@@ -1423,6 +1424,16 @@ li.fly_r{
 }
 .video_show{
 	display: block;
+}
+.video_up{
+	width: 350px;
+	height: 190px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: -630px -660px;
 }
 .video_tabs li:hover{
 	background: url(../img/style_z_c8c88dc.png) no-repeat;
@@ -1691,6 +1702,7 @@ li.active_video{
 	top: 100px;
 	right: 0;
 	background: url(../img/slidebar_209454d.png) ;
+	z-index: 999;
 }
 .aside_control{
 	padding-top: 5px;
@@ -1703,45 +1715,58 @@ li.active_video{
 	text-align: center;
 	color: #fff;
 	background: #d0ae4c;
+	cursor: pointer;
 }
 .aside_contain{
 	width: 150px;
 	height: 512px;
 	float: right;
 	padding-top: 10px;
+	cursor: pointer;
 }
-.gov_attention,.gov_download,.gov_att{
+.gov_attention{
 	width: 100%;
-	height: 220px;
-	border: 1px solid red;
+	height: 230px;
+	overflow: hidden;
 }
 .gov_koudai{
 	width: 150px;
-	height: 60px;
+	/*height: 217px;*/
 	color: #9db7fc;
 	text-align: center;
 	line-height: 20px;
+	padding-top: 5px ;
 }
-.gov_koudai p{
+.gov_koudai p,.gov_att p{
 	margin-bottom: 0px;
 }
-.gov_koudai p:first-child{
+.gov_koudai p:first-child,.gov_att p:first-child{
 	font-size: 16px;
 }
 .gov_pat{
 	
 }
-.pocket_qrcode{
+.pocket_top{
+	height: 170px;
+	width: 100%;
+	overflow: hidden;
+}
+.pocket_qrcode,.pocket_qrcodes{
 	width: 120px;
 	height: 120px;
 	margin: 5px auto;
 	background: url(../img/index_z_1f5dbe3.png) no-repeat;
 	background-position: 0px -275px;
 }
+
+.pocket_qrcodes{
+	background: url(../img/style_z_c8c88dc.png) no-repeat;
+	background-position: -796px -1058px;
+}
 .aside_title{
-	margin-top: 10px;
 	width: 150px;
-	height: 40px;
+	height: 50px;
+	padding-top: 5px;
 	color: #9db7fc;
 	background: #253459;
 	font-size: 14px;
@@ -1752,6 +1777,75 @@ li.active_video{
 	font-size: 16px;
 }
 .gov_att{
+	margin-top: 10px;
 	width: 150px;
 	height: 170px;
+	color: #9db7fc;
+	text-align: center;
+	line-height: 20px;
+}
+.aside_meun{
+	margin-top: 5px;
+	width: 100%;
+	height: 150px;
+	
+}
+.aside_meun ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.aside_meun ul li{
+	height: 75px;
+	width: 75px;
+	float: left;
+	color: #fff;
+	font-size: 25px;
+	text-align: center;
+	line-height: 110px;
+	box-sizing: border-box;
+	overflow: hidden;
+	position: relative;
+}
+.aside_meun ul li a{
+	color: #9cb6ff;
+	font-size: 14px;
+}
+.aside_meun ul li i{
+	display: block;
+	position: absolute;
+	top: 13px;
+	left: 25px;
+}
+.aside_meun ul li:hover a{
+	color: #fff;
+	text-decoration: none;
+}
+.aside_h a{
+	display: block;
+	width: 110px;
+	height: 36px;
+	margin: 10px auto;
+	background: url(../img/index_z_1f5dbe3.png) no-repeat;
+	background-position: -455px -321px;
+	font-size: 25px;
+	color:#fff;
+	font-family: "黑体";
+	text-align: center;
+	line-height: 36px;
+	text-decoration: none;
+}
+.aside_h a:hover{
+	background-position: -565px -321px;
+}
+.come_back{
+	width: 47px;
+	height: 39px;
+	margin: 10px auto;
+	background: url(../img/index_z_1f5dbe3.png) no-repeat;
+	background-position: -608px -233px;
+	cursor: pointer;
+}
+.come_back:hover{
+	background-position: -637px -277px;
 }

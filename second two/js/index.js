@@ -173,9 +173,70 @@ $(".male_roles").mouseenter(function(){
 		
 	})
 /*
- * -----------------------------------------------------------------------
+ * --------------------asides---------------------------------------------------
  */
-
-    
+var pocketTopHeight = $(".pocket_top").height();
+console.log(pocketTopHeight);
+$(".aside_title").mouseenter(function(){
+	if($(".pocket_top").height()==0){
+		$(".pocket_top").animate({"height":pocketTopHeight+"px"},500);
+		return;
+	};
+	$(".pocket_top").animate({"height":"0"},500);
+});
+/*
+ * ------------------------------侧边栏游戏下载菜单
+ */
+ $(".aside_meun ul li").mouseenter(function(){
+ 	var lisHeight = $(this).height();
+ 	var lisIndex = $(this).index()	
+	$(".aside_meun ul li i").eq(lisIndex).animate({"top":"-"+lisHeight+"px"},100,function(){
+		$(this).css({"top":lisHeight+"px"}).animate({"top":13+"px"},200);
+	});
+ });
+ /*
+  *------------------点击隐藏
+  */
+	var asides = true;
+	var asControlsWidth = $(".aside_contain").width();
+ 	$(".aside_control").click(function(){
+ 		 if(!asides){
+ 		 	$(".aside").animate({"right":0},500);
+   		 	$(".aside_control").html("收起&gt;");
+ 		 	asides = true;
+ 		 	return;
+ 		 };
+ 		$(".aside").animate({"right":"-"+asControlsWidth+"px"},500);
+ 		$(".aside_control").html("展开&lt;")
+ 		asides=false;
+ 	})
+/**
+ * ------------------------点击回到顶部---------------------
+ */
+	
+	$(window).scroll(function(){
+		var bodyscrollTop = $("body").scrollTop();
+		if(bodyscrollTop<100){
+			$(".aside").animate({"right":"-"+asControlsWidth+"px"},50);
+			$(".aside_control").html("展开&lt;")
+		}else if(bodyscrollTop>100){
+			$(".aside").animate({"right":0},50);
+			$(".aside_control").html("收起&gt;")
+		}
+		$(".come_back").click(function(){
+			$("body").animate({"scrollTop":0},500);
+		})
+	});
+	/**
+	 *视频 遮罩层动画 
+	 */
+		
+		$(".video_up").animate({},100,function(){
+			$(this).css({"transform":"scale(1.2,1.2)"});
+		})
+		$(".video_up").delay(500).animate({},100,function(){
+			$(this).css({"transform":"scale(1,1)"});
+		})
+//		$(".video_up").css({"transform":"scale(1,1)"})
    /*----------------------window load-----------------------------*/ 
 });
