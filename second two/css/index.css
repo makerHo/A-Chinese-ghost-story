@@ -990,11 +990,8 @@ ul.role_list{
 	height: 350px;
 	padding: 60px 20px 10px;
 	position:relative;
-	/*display: none;*/
-}
-/*div.unperson,div.doctor,div.enchanter,div.gentry,div.wizard,div.artist,div.archer,div.trooper,div.swordsman,div.mez{
 	display: none;
-}*/
+}
 .role_show{
 	display: block;
 }

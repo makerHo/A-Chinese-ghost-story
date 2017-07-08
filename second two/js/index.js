@@ -172,6 +172,8 @@ $(".male_roles").mouseenter(function(){
 		$(".role_show").css({"background-position":"-800 0 ","opacity":"0"}).delay(200).animate({"background-position":"0 0","opacity":"1"},300);
 		
 	})
+	
+		$(".role_factions").css({"margin-top":"-100px","opacity":"0"}).animate({"margin-top":"0","opacity":"1"},1000);
 /*
  * --------------------asides---------------------------------------------------
  */
