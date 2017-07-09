@@ -67,7 +67,7 @@ var timer = setInterval(function(){
  	
  	$(".repwd").keyup(function(){
  		$('.repwd').popover("show");
- 		if(!$.trim($(".repwd").val())==$.trim($("pwd").val())){
+ 		if($.trim($(".repwd").val())!=$.trim($("pwd").val())){
  			$(".repwd").attr({"data-contant":"The password not same"});
  			return false;
  		}
@@ -83,15 +83,73 @@ var timer = setInterval(function(){
  		}
  		$('.email').popover("destroy");
  	});
-   	$(".email").keyup(function(){
-   		$('.repwd').popover("show");
-   		console.log(valide_email($.trim($(".email").val())));
-   		if(!valide_email($.trim($(".email").val()))){
-   			$(".email").attr({"data-content":"Incorrect email format"});
-   			return false;
-   		}
-   		$('.email').popover("destroy");
-   	});
+
+   popoverShow($("email"),"Incorrect email format");
+   	
+ 	 function popoverShow(ele,value){
+ 		ele.keyup(function(){
+	 		ele.popover("show");
+	 		if(valide_email($.trim(ele.val()))==false){
+	 			ele.attr({"data-contant":value});
+	 			return false;
+	 		}
+	 		ele.attr({"data-contant":value});
+	 		ele.popover("destroy");
+	 	});
+ 	}
+ 
+ // 创建数据库对象
+  var webDB = openDatabase("member","1.0","only",1024*1024*10,function(){console.log("ok")})
+ //btn click 
+ 	
+ 	$(".btn").click(function(){
+ 		//邮箱验证
+ 		if($.trim($(".username").val()).length==0){
+ 			$(".users").prepend("<div class='dialogs'>username can't been empty<div>");
+ 			console.log("已经执行 click 监控username");
+ 			return false;
+   		//密码验证
+ 		}else if($.trim($(".pwd").val()).length==0){
+// 			$("div").remove(".form-group .dialogs");
+ 			$(".userpwd").prepend("<div class='dialogs'>password can't been empty<div>");
+ 			console.log("已经执行 click 监控pwd");
+ 			return false;
+ 		//密码强度验证
+ 		}else if(valide_pwd($.trim($(".pwd").val()))!=0){
+ 			$("div").remove(".form-group .dialogs");
+ 			$(".userpwd").prepend("<div class='dialogs'>Not high password strength <div>");
+ 			console.log("已经执行 click 监控repwd");
+ 			return false;
+ 		//repwd 为空验证
+ 		}else if($.trim($(".repwd").val()).length==0){
+ 			$("div").remove(".form-group .dialogs");
+ 			$(".userrepwd").prepend("<div class='dialogs'>username can't been empty<div>");
+ 			console.log("已经执行 click 监控repwd");
+ 			return false;
+ 		//repwd!=pwd 验证
+ 		}else if($.trim($(".repwd").val())!=$.trim($(".pwd").val())){
+ 			$("div").remove(".form-group .dialogs");
+ 			$(".userrepwd").prepend("<div class='dialogs'>The password not same<div>");
+ 			console.log("已经执行 click 监控repwd");
+ 			console.log(valide_email($.trim($(".email").val())));
+ 			return false;
+ 		//邮件为空等验证
+ 		}else if($.trim($(".email").val()).length==0){
+ 			$("div").remove(".form-group .dialogs");
+ 			$(".useremail").prepend("<div class='dialogs'>The E-mail can't been empty<div>");
+ 			console.log("已经执行 click 监控repwd");
+ 			return false;
+ 		//邮箱格式验证
+ 		}else if(valide_email($.trim($(".email").val()))==false){
+ 			$("div").remove(".form-group .dialogs");
+ 			$(".useremail").prepend("<div class='dialogs'>Incorrect email format<div>");
+ 			console.log("已经执行 click 监控repwd");
+ 			return false;
+ 		}
+ 		
+ 	});
+ 	
+ 	
  	
 	//-----------------------------
 });
