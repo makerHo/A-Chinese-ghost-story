@@ -137,16 +137,20 @@ var timer = setInterval(function(){
  		}else if($.trim($(".email").val()).length==0){
  			$("div").remove(".form-group .dialogs");
  			$(".useremail").prepend("<div class='dialogs'>The E-mail can't been empty<div>");
- 			console.log("已经执行 click 监控repwd");
+ 			console.log("已经执行 click 监控E-mail not empty");
  			return false;
  		//邮箱格式验证
  		}else if(valide_email($.trim($(".email").val()))==false){
  			$("div").remove(".form-group .dialogs");
  			$(".useremail").prepend("<div class='dialogs'>Incorrect email format<div>");
- 			console.log("已经执行 click 监控repwd");
+ 			console.log("已经执行 click 监控email unIncorrect");
  			return false;
  		}
- 		
+ 		webDB.transaction(function(tx){
+ 			tx.executeSql("create table if not exists js(id integer primary key asc,username text)");
+ 			tx.executeSql("insert into js(username)values('"+$(".username").val()+"')");
+ 		});
+ 		console.log(webDB);
  	});
  	
  	
