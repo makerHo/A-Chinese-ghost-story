@@ -143,7 +143,7 @@ transition: 1s;
 }
 .nav_hidden_img{
 	background: url(../img/topmenu_z_32bcf7.fw.png);
-	background-position:3px 55px ;
+	background-position:3px 57px ;
 }
 .nav_hidden_img1{
 	background: url(../img/topmenu_z_32bcf7.fw.png);
@@ -152,7 +152,7 @@ transition: 1s;
 }
 .nav_hidden_img1:hover{
 	background: url(../img/topmenu_z_32bcf7.fw.png);
-	background-position:-130px 55px;
+	background-position:-130px 57px;
 	
 }
 .nav_hidden_img1:hover .linear{

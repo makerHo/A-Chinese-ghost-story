@@ -1,33 +1,59 @@
 $(function(){
-	/**
-	 *-------------------背景随机切换------------------- 
-	 */
+	
 	
 $("[data-toggle='popover']").popover();
+ // 创建数据库对象
+  var db = openDatabase("member","1.0","only",1024*1024*10,function(){console.log("ok")});
+  /**
+	 *-------------------背景随机切换------------------- 
+	 */
 var timer = setInterval(function(){
 	var	bodymath = Math.floor(Math.random()*6);
-	$(".wrap").css({"background":"url(img/reg/banner"+bodymath+".jpg) no-repeat"});
-},3000);
+	$(".wrap").css({
+		"background":"url(img/reg/banner"+bodymath+".jpg) no-repeat",
+		"background-size":"100% 100%"
+	});
+},6000);
 	
 
 /**
  *input 获得焦点之后 弹出工具提示框 
  */
-
+	var email = document.querySelector(".email");
+	var username = document.querySelector(".username");
+	
 	$(".username").blur(function(){
 		if($.trim($(".username").val()).length==0){
 			$('.username').popover("show");
 			$(".username").attr({"data-content":"username can't been empty"})
+			$(".users span").addClass("glyphicon-remove");
+			$(".users").addClass("has-error");
 			return false;
 		}
 			$('.username').popover("destroy");
-		
+			db.transaction(function(tx){
+				tx.executeSql("create table if not exists member(id integer primary key asc,username text,email text)");
+				tx.executeSql("select * from member where username=?",[username.value],function(tx,data){
+					console.log(data.rows.length);
+					if(data.rows.length){
+						$(".users span").addClass("glyphicon-remove");
+						$(".users").addClass("has-error");
+						$(".users").prepend("<div class='dialogs'>Login is already taken</div>");
+						return;
+					}
+					$(".users").removeClass("has-error").addClass("has-success");
+					$(".users span").removeClass("glyphicon-remove").addClass('glyphicon-ok');
+					$(".users .dialogs").remove();
+				});
+			});
+		console.log(username.value.length)
 	});
 	$(".username").keydown(function(){
 		if($.trim($(".username").val()).length>0){
 			$('.username').popover("hide");
 		}
 	})
+	
  //pwd 验证
  	$(".pwd").blur(function(){
  		if($.trim($(".pwd").val()).length==0){
@@ -51,6 +77,8 @@ var timer = setInterval(function(){
  				break;
  			case 0:
  				$(".pwd").attr({"data-content":"High password strength"});
+ 				$(".userpwd span").addClass("glyphicon-ok");
+				$(".userpwd").addClass("has-success");
  				break;
  		}
  	});
@@ -79,27 +107,34 @@ var timer = setInterval(function(){
  		if($.trim($(".email").val()).length==0){
  			$('.email').popover("show");
  			$(".email").attr({"data-content":"email can't been empty"})
+ 			$(".useremail span").addClass("glyphicon-remove");
+			$(".useremail").addClass("has-error");
 			return false;
  		}
  		$('.email').popover("destroy");
  	});
 
-   popoverShow($("email"),"Incorrect email format");
+// popoverShow($("email"),"Incorrect email format");
    	
  	 function popoverShow(ele,value){
  		ele.keyup(function(){
 	 		ele.popover("show");
 	 		if(valide_email($.trim(ele.val()))==false){
 	 			ele.attr({"data-contant":value});
+	 			$(".useremail span").addClass("glyphicon-remove");
+				$(".useremail").addClass("has-error");
+	 			console.log("邮箱格式有问题")
 	 			return false;
 	 		}
+	 		$(".useremail span").removeClass("glyphicon-remove");
+			$(".useremail").removeClass("has-error");
 	 		ele.attr({"data-contant":value});
 	 		ele.popover("destroy");
+	 		console.log("邮箱格式正确")
 	 	});
  	}
  
- // 创建数据库对象
-  var webDB = openDatabase("member","1.0","only",1024*1024*10,function(){console.log("ok")})
+
  //btn click 
  	
  	$(".btn").click(function(){
@@ -110,47 +145,64 @@ var timer = setInterval(function(){
  			return false;
    		//密码验证
  		}else if($.trim($(".pwd").val()).length==0){
-// 			$("div").remove(".form-group .dialogs");
+ 			$(".users .dialogs").remove();
  			$(".userpwd").prepend("<div class='dialogs'>password can't been empty<div>");
  			console.log("已经执行 click 监控pwd");
  			return false;
  		//密码强度验证
  		}else if(valide_pwd($.trim($(".pwd").val()))!=0){
- 			$("div").remove(".form-group .dialogs");
+ 			$(".users .dialogs").remove();
+ 			$(".userpwd .dialogs").remove();
  			$(".userpwd").prepend("<div class='dialogs'>Not high password strength <div>");
  			console.log("已经执行 click 监控repwd");
  			return false;
  		//repwd 为空验证
  		}else if($.trim($(".repwd").val()).length==0){
- 			$("div").remove(".form-group .dialogs");
+ 			$(".userpwd .dialogs").remove();
  			$(".userrepwd").prepend("<div class='dialogs'>username can't been empty<div>");
  			console.log("已经执行 click 监控repwd");
  			return false;
  		//repwd!=pwd 验证
  		}else if($.trim($(".repwd").val())!=$.trim($(".pwd").val())){
- 			$("div").remove(".form-group .dialogs");
+ 			$(".userrepwd .dialogs").remove();
  			$(".userrepwd").prepend("<div class='dialogs'>The password not same<div>");
  			console.log("已经执行 click 监控repwd");
  			console.log(valide_email($.trim($(".email").val())));
  			return false;
  		//邮件为空等验证
  		}else if($.trim($(".email").val()).length==0){
- 			$("div").remove(".form-group .dialogs");
- 			$(".useremail").prepend("<div class='dialogs'>The E-mail can't been empty<div>");
+ 			$(".userrepwd .dialogs").remove();
+ 			$(".useremail").prepend("<div class='dialogs'>The1 E-mail can't been empty<div>");
  			console.log("已经执行 click 监控E-mail not empty");
  			return false;
  		//邮箱格式验证
  		}else if(valide_email($.trim($(".email").val()))==false){
  			$("div").remove(".form-group .dialogs");
  			$(".useremail").prepend("<div class='dialogs'>Incorrect email format<div>");
- 			console.log("已经执行 click 监控email unIncorrect");
+ 			console.log("已经执行 click 监控email unIncorrect	");
  			return false;
+ 		}else{
+ 			$(".useremail .dialogs").remove();
  		}
- 		webDB.transaction(function(tx){
- 			tx.executeSql("create table if not exists js(id integer primary key asc,username text)");
- 			tx.executeSql("insert into js(username)values('"+$(".username").val()+"')");
- 		});
- 		console.log(webDB);
+		
+ 		//form correct btn change class
+ 		$(".btn").removeClass("btn-danger").addClass("btn-success")
+		//创建数据库表单
+		db.transaction(function(tx){
+			tx.executeSql("create table if not exists member(id integer primary key asc,username text,email text)");
+			tx.executeSql("select * from member where username=?",[username.value],function(tx,data){
+				//添加之前判断用户名是否存在
+				
+				if(data.rows.length){
+					$(".users").prepend("<div class='dialogs'>Sorry this has be register,try other one please</div>");
+					return false;
+				};
+				$(".users .dialogs").remove();
+				tx.executeSql("insert into member(username,email)values(?,?)",[username.value,email.value],function(){});
+			})
+		})
+ 		
+ 		//-------------------------
  	});
  	
  	
