@@ -87,6 +87,7 @@ var timer = setInterval(function(){
  				break;
  			case 0:
  				$(".pwd").attr({"data-content":"High password strength"});
+ 				$(".dialogs").css({"color":"green"});
  				$(".userpwd span").removeClass("glyphicon-remove").addClass("glyphicon-ok");
 				$(".userpwd").removeClass("has-error").addClass("has-success");
  				break;
