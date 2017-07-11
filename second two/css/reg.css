@@ -10,7 +10,6 @@
     transition: all 3s linear;
 }
 .wrap_cover{
-	border: 1px solid red;
 	background:#000;
 	opacity: .7;
 	position: fixed;
@@ -43,6 +42,10 @@
 	font-family:mademoiselle;
 	src: url(../fonts/mademoiselle.ttf);
 }
+@font-face {
+	font-family:Christmas;
+	src: url(../fonts/Christmas.ttf);
+}
 
 .marginTop:after{
 	content: "";
@@ -66,4 +69,23 @@
 }
 #sever, .form_name{
 	cursor: pointer;
+}
+.form-group{
+	position: relative;
+	/*font-family:balloon ;*/
+}
+.form-group span{
+	position: absolute;
+	top: 25px;
+}	
+@media only screen and (max-width: 520px) {
+	.reg_title{
+		font-size: 35px;
+		white-space:nowrap;
+		overflow: hidden;
+		
+	}
+	.userinput{
+		margin-top: 40px;
+	}
 }

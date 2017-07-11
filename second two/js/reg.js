@@ -58,27 +58,37 @@ var timer = setInterval(function(){
  	$(".pwd").blur(function(){
  		if($.trim($(".pwd").val()).length==0){
  			$('.pwd').popover("show");
- 			$(".pwd").attr({"data-content":"password can't been empty"})
+ 			$(".pwd").attr({"data-content":"password can't been empty"});
+ 			$(".userpwd span").addClass("glyphicon-remove");
+			$(".userpwd").addClass("has-error");
 			return false;
  		}
- 		$('.pwd').popover("destroy");
+// 		$(".userpwd span").removeClass("glyphicon-remove");
+//		$(".userpwd").removeClass("has-error");
+// 		$('.pwd').popover("destroy");
  	});
  	$(".pwd").keyup(function(){
  		$('.pwd').popover("show");
  		switch(valide_pwd($.trim($(".pwd").val()))){
  			case 3:
  				$(".pwd").attr({"data-content":"Password is so easy!"});
+ 				$(".userpwd span").addClass("glyphicon-remove");
+				$(".userpwd").addClass("has-error");
  				break;
  			case 2:
  				$(".pwd").attr({"data-content":"Password is easy!"});
+ 				$(".userpwd span").addClass("glyphicon-remove");
+				$(".userpwd").addClass("has-error");
  				break;
  			case 1:
  				$(".pwd").attr({"data-content":"Password strength!"});
+ 				$(".userpwd span").addClass("glyphicon-remove");
+				$(".userpwd").addClass("has-error");
  				break;
  			case 0:
  				$(".pwd").attr({"data-content":"High password strength"});
- 				$(".userpwd span").addClass("glyphicon-ok");
-				$(".userpwd").addClass("has-success");
+ 				$(".userpwd span").removeClass("glyphicon-remove").addClass("glyphicon-ok");
+				$(".userpwd").removeClass("has-error").addClass("has-success");
  				break;
  		}
  	});
@@ -88,6 +98,8 @@ var timer = setInterval(function(){
  		if($.trim($(".repwd").val()).length==0){
  			$('.repwd').popover("show");
  			$(".repwd").attr({"data-content":"repassword can't been empty"})
+ 			$(".userrepwd span").addClass("glyphicon-remove");
+			$(".userrepwd").addClass("has-error");
 			return false;
  		}
  		$('.repwd').popover("destroy");
@@ -95,12 +107,16 @@ var timer = setInterval(function(){
  	
  	$(".repwd").keyup(function(){
  		$('.repwd').popover("show");
- 		if($.trim($(".repwd").val())!=$.trim($("pwd").val())){
+ 		if($.trim($(".repwd").val())!=$.trim($(".pwd").val())){
  			$(".repwd").attr({"data-contant":"The password not same"});
+ 			$(".userrepwd span").addClass("glyphicon-remove");
+ 			$(".userrepwd").addClass("has-error");
  			return false;
  		}
  		$(".repwd").attr({"data-contant":""});
  		$('.repwd').popover("destroy");
+ 		$(".userrepwd span").removeClass("glyphicon-remove").addClass("glyphicon-ok");
+		$(".userrepwd").removeClass("has-error").addClass("has-success");
  	});
  	//email verification
  	$(".email").blur(function(){
@@ -114,20 +130,19 @@ var timer = setInterval(function(){
  		$('.email').popover("destroy");
  	});
 
-// popoverShow($("email"),"Incorrect email format");
-   	
+popoverShow($(".email"),"Incorrect email format"); 	
  	 function popoverShow(ele,value){
  		ele.keyup(function(){
 	 		ele.popover("show");
-	 		if(valide_email($.trim(ele.val()))==false){
+	 		if(!valide_email($.trim(ele.val()))){
 	 			ele.attr({"data-contant":value});
 	 			$(".useremail span").addClass("glyphicon-remove");
-				$(".useremail").addClass("has-error");
+	 			$(".useremail").addClass("has-error");
 	 			console.log("邮箱格式有问题")
 	 			return false;
 	 		}
-	 		$(".useremail span").removeClass("glyphicon-remove");
-			$(".useremail").removeClass("has-error");
+	 		$(".useremail").removeClass("has-error").addClass("has-success");
+	 		$(".useremail span").removeClass("glyphicon-remove").addClass("glyphicon-ok");
 	 		ele.attr({"data-contant":value});
 	 		ele.popover("destroy");
 	 		console.log("邮箱格式正确")
@@ -201,7 +216,7 @@ var timer = setInterval(function(){
 				tx.executeSql("insert into member(username,email)values(?,?)",[username.value,email.value],function(){});
 			})
 		})
- 		
+ 		location.href="index.html"
  		//-------------------------
  	});
  	
