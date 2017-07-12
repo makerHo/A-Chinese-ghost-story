@@ -46,30 +46,25 @@ $('.secColl').click(function(){
  * */
 var bbsWidth = $('.bbs_share').width();
 var bbsImg = $(".bbs_img").width();
-		$('.bbs_share').css({"width":bbsWidth+"px"});
+		$('.bbs_share').css({"width":bbsWidth+"px"}).siblings().css({"width":bbsImg+"px"});
 		$(".bbs_img").css({"background-position":"-1160px -300px"});
-		$(".hall_of_name").css({"width":bbsImg+"px"});
-		$(".walkthrough").css({"width":bbsImg+"px"});	
+//		$(".hall_of_name").css({"width":bbsImg+"px"});
+//		$(".walkthrough").css({"width":bbsImg+"px"});	
 $(".bbs_img").click(function(){	
-	$('.bbs_share').animate({"width":bbsWidth+"px"},500);
+	$('.bbs_share').animate({"width":bbsWidth+"px"},500).siblings().animate({"width":bbsImg+"px"},500);
 	$(this).css({"background-position":"-1160px -300px"});
 	$(".hall_img").css({"background-position":"-1060px -300px"});
 	$(".walkthrough_img").css({"background-position":"-0px -660px"})
-	$('.hall_of_name').animate({"width":bbsImg+"px"},500);
-	$('.walkthrough').animate({"width":bbsImg+"px"},500);
 });
 $(".hall_img").click(function(){	
-	$('.bbs_share').animate({"width":bbsImg+"px",},500);
-	$('.hall_of_name').animate({"width":bbsWidth+"px"},500);
+	$('.hall_of_name').animate({"width":bbsWidth+"px"},500).siblings().animate({"width":bbsImg+"px"},500);
 	$(this).css({"background-position":"-960px -300px"});
 	$(".bbs_img").css({"background-position":"-1260px -300px"});
 	$(".walkthrough_img").css({"background-position":"-0px -660px"})
-	$('.walkthrough').animate({"width":bbsImg+"px"},500);
 });
 $(".walkthrough_img").click(function(){	
-	$('.bbs_share').animate({"width":bbsImg+"px"},500);
-	$('.hall_of_name').animate({"width":bbsImg+"px"},500);
-	$('.walkthrough').animate({"width":bbsWidth+"px"},500);
+
+	$('.walkthrough').animate({"width":bbsWidth+"px"},500).siblings().animate({"width":bbsImg+"px"},500);
 	$(this).css({"background-position":"-860px -300px"});
 	$(".bbs_img").css({"background-position":"-1260px -300px"});
 	$(".hall_img").css({"background-position":"-1060px -300px"});
@@ -115,7 +110,7 @@ $(".male_roles").mouseenter(function(){
     var picNum = 1;//上一次移入的图片的ID
 /**
  *mouseenter 效果 */
-	$(".role_tabs li").mouseenter(function(){
+	$(".role_tabs li").hover(function(){
 		var picIndex = $(this).index();
 		console.log(picIndex);
 		if(picNum == picIndex){
@@ -124,9 +119,14 @@ $(".male_roles").mouseenter(function(){
 		picNum = picIndex;//picNum =4
 		$(".role_factions").css({"margin-top":"-100px","opacity":"0"}).animate({"margin-top":"0","opacity":"1"},1000);
 		$(".profession").css({"margin-left":"-300px"}).delay(200).animate({"margin-left":"0px","opacity":"1"},1000);
-		$(".pro_chart").css({"opacity":"0","margin-top":"100px"}).delay(400).animate({"opacity":"1","margin-top":"10px"},1000);
-		$(".role_show").css({"background-position":"-800 0 ","opacity":"0"}).delay(200).animate({"background-position":"0 0","opacity":"1"},300);
+		$(".pro_chart").css({"opacity":"0","margin-top":"100px"}).delay(500).animate({"opacity":"1","margin-top":"10px"},1000);
+		$(".role_show").css({"opacity":"0"}).delay(200).animate({"opacity":"1"},300);
 		
+	},function(){
+		$(".role_factions").delay(200).stop(false,true);
+		$(".profession").delay(200).stop(false,true);
+		$(".pro_chart").delay(200).stop(false,true);
+		$(".role_show").delay(200).stop(false,true);	
 	})
 	
 		$(".role_factions").css({"margin-top":"-100px","opacity":"0"}).animate({"margin-top":"0","opacity":"1"},1000);
@@ -161,11 +161,13 @@ $(".aside_title").mouseenter(function(){
  		 if(!asides){
  		 	$(".aside").animate({"right":0},500);
    		 	$(".aside_control").html("收起&gt;");
+   		 	//非真转换
  		 	asides = true;
  		 	return;
  		 };
  		$(".aside").animate({"right":"-"+asControlsWidth+"px"},500);
  		$(".aside_control").html("展开&lt;")
+ 		//非转换
  		asides=false;
  	})
 /**
@@ -188,14 +190,33 @@ $(".aside_title").mouseenter(function(){
 	/**
 	 *视频 遮罩层动画 
 	 */
+		var vdtimer = setInterval(function(){
+			$(".video_up").css({"transform":"scale(1.5,1.5)"}).animate({"transtion":".5s"},500,function(){
+				$(".video_up").css({"transform":"scale(1,1)"})
+			})
+		},2000);
 		
-		$(".video_up").animate({},100,function(){
-			$(this).css({"transform":"scale(1.2,1.2)"});
-		})
-		$(".video_up").delay(500).animate({},100,function(){
-			$(this).css({"transform":"scale(1,1)"});
-		})
-	$(".aside_h a").html(sessionStorage.getItem("username"))
+		/**
+		 *登录成功之后显示登录名称 
+		 */
 
+	//登录成功之后将显示注销页面
+	if(sessionStorage.getItem("username")){
+		$(".aside_h a").css({"background-position": "-455px -188px"}).html(sessionStorage.getItem("username"));
+		$(".jump_reg").html("注销");
+		if($(".jump_reg").html()=="注销"){
+			$(".jump_reg").click(function(){
+				sessionStorage.removeItem("username");
+				$(".aside_h a").css({
+					"background-position": "-455px -321px"
+				});
+				$(".jump_reg").html("立即注册");
+				return;
+			});
+		}
+			$(".jump_reg").click(function(){
+			location.href="reg.html";
+			});	
+	}
    /*----------------------window load-----------------------------*/ 
 });

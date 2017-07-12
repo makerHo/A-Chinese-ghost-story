@@ -65,6 +65,9 @@ body{
 .reglan>li:hover{
 	border-bottom: 3px solid red;
 }
+.reglan>li a{
+	color: #000000;
+}
 .sanj{
 	color:#bc2e2e;
 	position: relative;
@@ -85,7 +88,8 @@ body{
 	list-style: none;
 	width: 1021px;
 	height: 500px;
-	background: #ddd;
+	background: url(../img/20170712151600.jpg);
+	background-size: 100% 100%;
 	position: absolute;
 	top: 55px;
 	left: -760px;
@@ -1354,7 +1358,7 @@ ul.role_list{
 }
 .video_t{
 	list-style: none;
-	margin-left: 50px;
+	margin-left: 45px;
 	padding:5px;
 	
 }
@@ -1423,9 +1427,11 @@ li.fly_r{
 	display: block;
 }
 .video_up{
-	width: 350px;
+	margin-left: 6px;
+	width: 340px;
 	height: 190px;
 	position: absolute;
+	transition: all 1s linear; 
 	top: 0;
 	left: 0;
 	z-index: 100;
