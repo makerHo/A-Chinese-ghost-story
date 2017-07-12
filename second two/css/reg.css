@@ -7,7 +7,7 @@
     bottom: auto;
     width: 100%;
     height: 100%;
-    transition: all 3s linear;
+    transition: all 2s linear;
 }
 .wrap_cover{
 	background:#000;
@@ -60,7 +60,7 @@
 	color: red;
 }
 .userinput{
-	margin-top: 100px;
+	/*margin-top: 50px;*/
 }
 .dialogs{
 	color: #FF0000;
@@ -88,4 +88,189 @@
 	.userinput{
 		margin-top: 40px;
 	}
+}
+p.login_text,p.login_text2{
+	padding: 15px;
+	color:#FFF;
+	text-align: right;
+}
+.sign_reg{
+	display: none;
+}
+.btn_gap{
+	margin-top: 20px;
+}
+/*---------引入footer---------*/
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sina:before { content: "\e609"; }
+
+.icon-qzone:before { content: "\e607"; }
+
+.icon-yixin01:before { content: "\e636"; }
+
+.icon-custom-wechat:before { content: "\e642"; }
+
+.icon-qq:before { content: "\e635"; }
+
+.icon--angel:before { content: "\e6e8"; }
+
+.icon-ningshi:before { content: "\e77b"; }
+
+.icon-youshang:before { content: "\e77c"; }
+
+.icon-kaixin:before { content: "\e77d"; }
+
+.icon-daxiao:before { content: "\e77e"; }
+
+.icon-jingya:before { content: "\e77f"; }
+
+.icon-shengqi:before { content: "\e780"; }
+
+.icon-haixiu:before { content: "\e781"; }
+
+.icon-biezui:before { content: "\e782"; }
+
+.icon-keai:before { content: "\e783"; }
+
+/*ali 字体图标*/
+.footer{
+	margin: 30px auto 0;
+	width: 1250px;
+	height: 250px;
+}
+.share_to{
+	width: 100%;
+	height: 70px;
+	padding: 15px;
+}
+.share_icon{
+	list-style: none;
+	width: 300px;
+	height: 36px;
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+}
+.share_icon:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.share_icon li{
+	width:36px ;
+	height: 36px;
+	border-radius: 36px;
+	color: #fff;
+	background: #000;
+	float: left;
+	font-size: 18px;
+	line-height: 36px;
+	font-weight: 600;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.share_icon li i{
+
+	font-size: 28px;
+}
+.share_icon li:hover{
+	background: darkred;
+}
+.share_icon li:first-child{
+	width:72px ;
+	height: 36px;
+	color: #000;
+	border-radius: 0;
+	background: none;
+	cursor: auto;
+}
+.out_info{
+	width: 100%;
+	height: 50px;
+}
+.out_famliy_obj,.out_info_img{
+	width: 50%;
+	height: 50px;
+	float: left;
+}
+.out_info_img{
+	text-align: right;
+}
+.out_info_img a{
+	margin-left: 10px;
+}
+
+.out_info_img a:last-child{
+	margin-right: 10px;
+}
+.out_famliy_obj{}
+.out_famliy_obj ul{
+	list-style: none;
+	padding:0;
+	margin: 0;
+	margin-left: 10px;
+	
+}
+.out_famliy_obj ul:after{
+	content: ''	;
+	display: block;
+	clear: both;
+}
+.out_famliy_obj li{
+	float: left;
+	width: 65px;
+	height: 20px;
+}
+.out_famliy_obj li a{
+	color: #000;
+}
+.conpany_info{
+	width: 600px;
+	height: 30px;
+	line-height:25px;
+	padding-left: 10px;
+	
+}
+.conpany_name{
+	float: left;
+}
+.conpany_famliy{
+	width: 160px;
+	height: 25px;
+	background: #610000;
+	float: left;
+	margin-left: 20px;
+	text-align: center;
+}
+.conpany_famliy a{
+	color: #FFF;
+}
+.announcement{
+	padding: 20px 0 0 45px;
+	margin:auto;
+	width: 75%;
+	height: 100px;
+	font-size: 13px;
+	line-height: 15px;
+}
+.announcement a{
+	color: #000;
+}
+.footer{
+	position: relative;
+	z-index: 999;
+	/*background: #000;*/
+	opacity: 1;
+	color: #fff;
+}
+.footer a{
+	
+	color: #fff;
 }

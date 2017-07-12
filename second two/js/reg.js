@@ -34,7 +34,7 @@ var timer = setInterval(function(){
 			db.transaction(function(tx){
 				tx.executeSql("create table if not exists member(id integer primary key asc,username text,email text)");
 				tx.executeSql("select * from member where username=?",[username.value],function(tx,data){
-					console.log(data.rows.length);
+//					console.log(data.rows.length);
 					if(data.rows.length){
 						$(".users span").addClass("glyphicon-remove");
 						$(".users").addClass("has-error");
@@ -221,7 +221,56 @@ popoverShow($(".email"),"Incorrect email format");
  		//-------------------------
  	});
  	
+ 	//登录注册框切换
+ 	var signShow = true;
+ 	$(".login_text").css({"display":"none"});
+ 	$(".sign_in").click(function(){	
+ 		
+ 		if(signShow){
+	 		$(".sign_box").css({"display":"none"});
+	 		$(".sign_reg").css({"display":"block"});
+	 		$(".login_text2").css({"display":"none"});
+	 		$(".login_text").css({"display":"block"});
+	 		$(".reg_title").html('Create A Free Account');
+	 	}else{
+	 		$(".sign_box").css({"display":"block"});
+	 		$(".sign_reg").css({"display":"none"});
+	 		$(".login_text").css({"display":"none"});
+	 		$(".login_text2").css({"display":"block"});
+	 		$(".reg_title").html('Welcome sign in');
+	 	}
+	 	console.log(signShow);
+ 		if(signShow){
+ 			signShow=false;
+ 			return;
+ 		}
+ 		signShow=true;
+ 	});
  	
- 	
+ 	//sign box
+ 	$(".btn_gap").click(function(){
+ 		console.log($(".usernames").val());
+ 		db.transaction(function(tx){
+			tx.executeSql("create table if not exists member(id integer primary key asc,username text,email text)");
+			tx.executeSql("select * from member where username=?",[$(".usernames").val()],function(tx,data){
+					console.log(data.rows.length);
+				if(data.rows.length){
+					window.sessionStorage.setItem("username",$(".usernames").val());
+					$(".userns").removeClass("has-error").addClass("has-success");
+					$(".userns .dialogs").remove();
+					$(".wrap").css({
+						"transform":"rotate(3600deg) scale(.01,.01)"
+					}).animate({"opacity":"0"},1000,function(){
+						location.href="index.html";
+					});
+				};
+				$(".userns .dialogs").remove();
+				$(".userns").addClass("has-error");
+				$(".userns").prepend("<div class='dialogs'>Sorry! This username was not stroage</div>");
+					return;
+				
+			});
+		});
+ 	});
 	//-----------------------------
 });

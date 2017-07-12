@@ -1520,14 +1520,7 @@ li.active_video{
 	margin-left: 10px;	
 }
 /*--------------footer-----------------------*/
-/*ali 字体图标*/
-@font-face {font-family: "iconfont";
-  src: url('http://at.alicdn.com/t/font_2gb17gc8qnfxn7b9.eot?t=1499329050347'); /* IE9*/
-  src: url('http://at.alicdn.com/t/font_2gb17gc8qnfxn7b9.eot?t=1499329050347#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('http://at.alicdn.com/t/font_2gb17gc8qnfxn7b9.woff?t=1499329050347') format('woff'), /* chrome, firefox */
-  url('http://at.alicdn.com/t/font_2gb17gc8qnfxn7b9.ttf?t=1499329050347') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('http://at.alicdn.com/t/font_2gb17gc8qnfxn7b9.svg?t=1499329050347#iconfont') format('svg'); /* iOS 4.1- */
-}
+
 
 .iconfont {
   font-family:"iconfont" !important;
