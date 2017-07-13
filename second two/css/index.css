@@ -1097,7 +1097,14 @@ ul.role_list{
  color: #b04444;
 }
 /*----bbs share-------*/
+
 .bbs_img:hover{
+	background-position: -1160px -300px;
+}
+.bbs_img{
+	background-position: -1260px -300px;
+}
+.bbs_imgs{
 	background-position: -1160px -300px;
 }
 /*----bbs 名人堂-------*/
@@ -1107,11 +1114,17 @@ ul.role_list{
 .hall_img:hover{
 	background-position: -960px -300px;
 }
+.hall_imgs{
+	background-position: -960px -300px;
+}
 /*----bbs 游戏攻略----*/
 .walkthrough_img{
 	background-position: 0px -660px;
 }
 .walkthrough_img:hover{
+	background-position: -860px -300px;
+}
+.walkthrough_imgs{
 	background-position: -860px -300px;
 }
 /*----初始状态 隐藏名人堂和游戏攻略-------*/
