@@ -48,13 +48,30 @@ var bbsWidth = $('.bbs_share').width();
 var bbsImg = $(".bbs_img").width();
 		$('.bbs_share').css({"width":bbsWidth+"px"}).siblings().css({"width":bbsImg+"px"});
 		$(".bbs_img").css({"background-position":"-1160px -300px"});
-//		$(".hall_of_name").css({"width":bbsImg+"px"});
-//		$(".walkthrough").css({"width":bbsImg+"px"});	
+
+//user_bbs hover 效果
+//$(".bbs_img").hover(function(){
+//	$(this).css({"background-position":"-1160px -300px"});
+//},function(){
+//	$(this).css({"background-position":"-1260px -300px"});
+//})
+//$(".hall_img").hover(function(){
+//	$(this).css({"background-position":"-960px -300px"});
+//},function(){
+//	$(this).css({"background-position":"-1060px -300px"});
+//});
+//$(".walkthrough_img").hover(function(){
+//	$(this).css({"background-position":"-860px -300px"});
+//},function(){
+//	$(this).css({"background-position":"0px -660px"});
+//});
+
 $(".bbs_img").click(function(){	
 	$('.bbs_share').animate({"width":bbsWidth+"px"},500).siblings().animate({"width":bbsImg+"px"},500);
 	$(this).css({"background-position":"-1160px -300px"});
 	$(".hall_img").css({"background-position":"-1060px -300px"});
 	$(".walkthrough_img").css({"background-position":"-0px -660px"})
+	
 });
 $(".hall_img").click(function(){	
 	$('.hall_of_name').animate({"width":bbsWidth+"px"},500).siblings().animate({"width":bbsImg+"px"},500);
@@ -69,6 +86,8 @@ $(".walkthrough_img").click(function(){
 	$(".bbs_img").css({"background-position":"-1260px -300px"});
 	$(".hall_img").css({"background-position":"-1060px -300px"});
 });
+
+
 /**
  * news tab页 
  */

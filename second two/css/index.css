@@ -1109,7 +1109,7 @@ ul.role_list{
 }
 /*----bbs 游戏攻略----*/
 .walkthrough_img{
-	background-position: -0px -660px;
+	background-position: 0px -660px;
 }
 .walkthrough_img:hover{
 	background-position: -860px -300px;
